@@ -10,9 +10,9 @@ passport.use(
     {
       usernameField: "email"
     },
-    function(email, password, done) {
+    function (email, password, done) {
       // when a user attempts to login run this code
-      db.Users.findOne({ where: { email: email } }).then(function(dbUser) {
+      db.Users.findOne({ where: { email: email } }).then(function (dbUser) {
         //   if there is no user tell them no by that email register
         if (!dbUser) {
           return done(null, false, { message: "Incorrect email" });
@@ -35,19 +35,21 @@ passport.use(
       usernameField: "email",
       passReqToCallback: true
     },
-    function(req, email, password, done) {
+    function (req, email, password, done) {
       // when a user attempts to register
-      db.Users.findOne({ where: { email: email } }).then(function(dbUser) {
+      db.Users.findOne({ where: { email: email } }).then(function (dbUser) {
         //   if there is a user tell them email already used
         if (dbUser) {
           return done(null, false, { message: "That email is already in use" });
         } else {
           // if there is no user create one
           db.Users.create({
-            nickname: req.body.name,
+            fullName: req.body.name,
             email: email,
-            password: password
-          }).then(function(newUser) {
+            password: password,
+            dob: dob,
+            phoneNumber: phoneNumber
+          }).then(function (newUser) {
             if (!newUser) {
               return done(null, false);
             }
@@ -61,10 +63,10 @@ passport.use(
   )
 );
 // encrypting users to sessions and out of sessions
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user);
 });
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function (id, done) {
   done(null, user);
 });
 // exporting our configurations
