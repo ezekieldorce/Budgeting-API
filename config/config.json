@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Student",
-    "database": "tasker",
+    "password": "student",
+    "database": "checkology",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
