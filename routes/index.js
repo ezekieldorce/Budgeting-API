@@ -17,11 +17,10 @@ routes.get("/transactions", function(req, res) {
 routes.post("/transactions", function(req, res) {
   db.Transaction.create({
     // code here
-  })
+  });
 
   res.redirect("/transactions");
 });
-
 
 routes.post("/ninja", authenticate, function(req, res) {
   // console.log(req.body.taskItem);
