@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
     },
 
     trade: {
-      type: DataTypes.STRING
+      type: DataTypes.BOOLEAN
     },
 
   });
