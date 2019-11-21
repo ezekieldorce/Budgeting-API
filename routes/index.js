@@ -6,14 +6,20 @@ const authenticate = require("../config/middleware/auth.js");
 
 //GET
 
-routes.get("/home", authenticate, function(req, res) {
-  console.log(req.user);
-  db.Tasks.findAll({
-    where: { userID: req.user.id }
-  }).then(function(results) {
-    console.log(results);
-    res.render("home.ejs", { list: results, user: req.user });
+routes.get("/", function(req, res) {
+  res.render("welcome.ejs");
+});
+
+routes.get("/transactions", function(req, res) {
+  res.render("transactions.ejs");
+});
+
+routes.post("/transactions", function(req, res) {
+  db.Transaction.create({
+    // code here
   });
+
+  res.redirect("/transactions");
 });
 
 routes.post("/ninja", authenticate, function(req, res) {
@@ -37,7 +43,7 @@ routes.delete("/delete/:index", authenticate, function(req, res) {
 });
 
 //GET Login
-routes.get("/user/login", function(req, res) {
+routes.get("/login", function(req, res) {
   res.render("login.ejs");
 });
 
@@ -45,13 +51,13 @@ routes.get("/user/login", function(req, res) {
 routes.post(
   "/user/login",
   passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/user/login"
+    successRedirect: "/transactions",
+    failureRedirect: "/login"
   })
 );
 
 //GET Signup
-routes.get("/user/registration", function(req, res) {
+routes.get("/registration", function(req, res) {
   res.render("registration.ejs");
 });
 
