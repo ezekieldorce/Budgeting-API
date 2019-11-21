@@ -1,0 +1,46 @@
+#logo {
+    background: url("./checkology.png") no-repeat center;
+    height: 90px;
+    padding: 28px;    
+
+}
+
+#container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0 50px;
+    font-size: 15px;
+    font-family: 'Advent Pro', sans-serif;
+    transition: all 0.2s ease-in;
+}
+
+body {
+    background-color: rgba(205, 231, 223, 0.63);
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 15px;
+}
+
+.user-button {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 15px;
+    outline: none;
+    font-weight: 300;
+}
+
+.user-button:hover {
+    border: 2px solid #515151;
+  }
+
+#Balance {
+    box-sizing: border-box;
+    text-align: center;
+    width: 391px;
+    height: 202px;
+    border: 10px solid rgba(89, 169, 216, 0.931);
+    margin: 0 auto;
+    padding: 20px 0 50px;
+  }
+
+  .end{
+    padding-left: 110px;
+  }
