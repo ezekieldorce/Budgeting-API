@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SergioJss/Featherly.git"
+    "url": "git+https://github.com/elijahwildflame/Featherly.git"
   },
-  "author": "Sergio Silva Salas",
+  "author": "Alexander Rogers",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SergioJss/Featherly/issues"
+    "url": "https://github.com/elijahwildflame/Featherly/issues"
   },
-  "homepage": "https://github.com/SergioJss/Featherly#readme",
+  "homepage": "https://github.com/elijahwildflame/Featherly#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
