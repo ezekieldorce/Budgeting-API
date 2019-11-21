@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "admin",
     "password": "student",
     "database": "checkology",
     "host": "127.0.0.1",
