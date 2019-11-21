@@ -7,16 +7,21 @@ const authenticate = require("../config/middleware/auth.js");
 //GET
 
 routes.get("/", function(req, res) {
+  db.Transaction.create({
+    // code here
+    amount: req.body.amount
+  });
   res.render("welcome.ejs");
 });
 
 routes.get("/transactions", function(req, res) {
-  res.render("transactions.ejs");
+  res.render("transaction.ejs");
 });
 
 routes.post("/transactions", function(req, res) {
   db.Transaction.create({
     // code here
+    amount: req.body.amount
   });
 
   res.redirect("/transactions");
