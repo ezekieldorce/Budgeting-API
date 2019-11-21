@@ -29,7 +29,20 @@ module.exports = function (sequelize, DataTypes) {
 
     phoneNumber: {
       type: DataTypes.STRING
-    }
+    },
+
+    employed: {
+      type: DataTypes.STRING
+    },
+
+    country: {
+      type: DataTypes.STRING
+    },
+
+    trade: {
+      type: DataTypes.STRING
+    },
+
   });
 
   //create custom methods for our user model
