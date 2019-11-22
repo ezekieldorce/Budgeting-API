@@ -10,6 +10,18 @@ routes.get("/", function (req, res) {
   res.render("welcome.ejs");
 });
 
+routes.get("/contact", function (req, res) {
+  res.render("contact.ejs");
+});
+
+routes.get("/login", function (req, res) {
+  res.render("login.ejs");
+});
+
+routes.get("/transactions", function (req, res) {
+  res.render("transaction.ejs");
+});
+
 routes.get("/transactions", function (req, res) {
   db.Transaction.findAll({
     // code here
@@ -63,6 +75,7 @@ routes.post(
   })
 );
 
+<<<<<<< HEAD
 //GET Signup
 routes.get("/registration", function (req, res) {
   res.render("registration.ejs");
@@ -77,6 +90,8 @@ routes.post(
   })
 );
 
+=======
+>>>>>>> 9cddc87bfdce5861cd2e428679f8164ede92f8bf
 //GET logout
 
 routes.get("/logout", function (req, res) {
