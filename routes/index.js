@@ -11,12 +11,19 @@ routes.get("/", function(req, res) {
 });
 
 routes.get("/transactions", function(req, res) {
-  res.render("transactions.ejs");
+  db.Transaction.findAll({
+    // code here
+    where: { userID: req.user.id }
+  }).then(function(results) {
+    // console.log(results);
+    res.render("transaction.ejs", { transactions: results });
+  });
 });
 
 routes.post("/transactions", function(req, res) {
   db.Transaction.create({
     // code here
+    amount: req.body.amount
   });
 
   res.redirect("/transactions");
