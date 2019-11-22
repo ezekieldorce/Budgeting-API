@@ -6,21 +6,21 @@ const authenticate = require("../config/middleware/auth.js");
 
 //GET
 
-routes.get("/", function(req, res) {
+routes.get("/", function (req, res) {
   res.render("welcome.ejs");
 });
 
-routes.get("/transactions", function(req, res) {
+routes.get("/transactions", function (req, res) {
   db.Transaction.findAll({
     // code here
     where: { userID: req.user.id }
-  }).then(function(results) {
+  }).then(function (results) {
     // console.log(results);
     res.render("transaction.ejs", { transactions: results });
   });
 });
 
-routes.post("/transactions", function(req, res) {
+routes.post("/transactions", function (req, res) {
   db.Transaction.create({
     // code here
     amount: req.body.amount
@@ -29,20 +29,20 @@ routes.post("/transactions", function(req, res) {
   res.redirect("/transactions");
 });
 
-routes.post("/ninja", authenticate, function(req, res) {
+routes.post("/ninja", authenticate, function (req, res) {
   // console.log(req.body.taskItem);
   db.Tasks.create({
     todo: req.body.taskItem,
     userID: req.user.id
-  }).then(function(results) {
+  }).then(function (results) {
     // console.log(results);
     res.redirect("/home");
   });
 });
 
-routes.delete("/delete/:index", authenticate, function(req, res) {
+routes.delete("/delete/:index", authenticate, function (req, res) {
   console.log(req.params.index);
-  db.Tasks.destroy({ where: { id: req.params.index } }).then(function(results) {
+  db.Tasks.destroy({ where: { id: req.params.index } }).then(function (results) {
     console.log(results);
     res.redirect("/home");
   });
@@ -50,7 +50,7 @@ routes.delete("/delete/:index", authenticate, function(req, res) {
 });
 
 //GET Login
-routes.get("/login", function(req, res) {
+routes.get("/login", function (req, res) {
   res.render("login.ejs");
 });
 
@@ -64,7 +64,7 @@ routes.post(
 );
 
 //GET Signup
-routes.get("/registration", function(req, res) {
+routes.get("/registration", function (req, res) {
   res.render("registration.ejs");
 });
 
@@ -79,7 +79,7 @@ routes.post(
 
 //GET logout
 
-routes.get("/logout", function(req, res) {
+routes.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/home");
 });
