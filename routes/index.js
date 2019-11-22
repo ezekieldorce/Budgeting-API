@@ -75,23 +75,6 @@ routes.post(
   })
 );
 
-<<<<<<< HEAD
-//GET Signup
-routes.get("/registration", function (req, res) {
-  res.render("registration.ejs");
-});
-
-//POST Signup
-routes.post(
-  "/user/signup",
-  passport.authenticate("local-signup", {
-    successRedirect: "/home",
-    failureRedirect: "/user/signup"
-  })
-);
-
-=======
->>>>>>> 9cddc87bfdce5861cd2e428679f8164ede92f8bf
 //GET logout
 
 routes.get("/logout", function (req, res) {
