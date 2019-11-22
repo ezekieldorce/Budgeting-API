@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Log In | Sign Up</title>
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="login.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Advent+Pro:500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <img class="logo" src="./checkology.png" alt="logo" />
-      <nav>
-        <ul class="nav_links">
-          <li><a href="welcome.html">Welcome</a></li>
-          <li><a href="login.html">Register</a></li>
-          <li><a href="transactions.html">Transactions</a></li>
-        </ul>
-      </nav>
-      <a class="cta" href="contact.html"><button>Contact</button></a>
-    </header>
 
-    <div class="login-page">
-      <div class="form">
-        <form class="login-form">
-          <input type="text" placeholder="User Name" />
-          <input type="text" placeholder="Password" />
-          <button>Login</button>
-          <p class="message">Not Registered?<a href="#"> Register here</a></p>
-        </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Log In | Sign Up</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro:500&display=swap" rel="stylesheet" />
+</head>
 
-        <form class="register-form">
-            <input name="fullName" type="text" placeholder=" Full Name"/>
-            <input name="dob" type="text" placeholder="Date of Birth"/>
-            <input name="User" type="text" placeholder="Username"/>
-            <input name="password" type="text" placeholder="Password"/>
-            <input name="check-pass" type="text" placeholder="Check Password"/>
-            <input name="email" type="text" placeholder="Email"/>
-            <input name="wallet-balance" type="text" placeholder="Wallet Balance"/>
+<body>
+  <header>
+    <img class="logo" src="./checkology.png" alt="logo" />
+    <nav>
+      <ul class="nav_links">
+        <li><a href="/welcome">Welcome</a></li>
+        <li><a href="/login">Register</a></li>
+        <li><a href="/transactions">Transactions</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="contact.html"><button>Contact</button></a>
+  </header>
 
-            <p> Credit or Debit?</p>
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="User Name" />
+        <input type="text" placeholder="Password" />
+        <button>Login</button>
+        <p class="message">Not Registered?<a href="#"> Register here</a></p>
+      </form>
+
+      <form class="register-form">
+        <input name="fullName" type="text" placeholder=" Full Name" />
+        <input name="dob" type="text" placeholder="Date of Birth" />
+        <input name="User" type="text" placeholder="Username" />
+        <input name="password" type="text" placeholder="Password" />
+        <input name="check-pass" type="text" placeholder="Check Password" />
+        <input name="email" type="text" placeholder="Email" />
+        <input name="wallet-balance" type="text" placeholder="Wallet Balance" />
+
+        <p> Credit or Debit?</p>
         <input type="radio" name="credit-debit" value="Yes"> Yes <br>
         <input type="radio" name="creadit-debit" value="No"> No <br>
         <p> Are you employed?</p>
@@ -53,24 +52,25 @@
 
         <p>What country do you reside in?</p>
         <select>
-      <option value="United States">United States</option>
-      <option value="Other">Other</option>
-      <option value="n/a">Perfer not to say</option>
+          <option value="United States">United States</option>
+          <option value="Other">Other</option>
+          <option value="n/a">Perfer not to say</option>
 
-      </select> 
+        </select>
 
-            <button>Create Account</button>
+        <button>Create Account</button>
         <p class="message">Already Registered?<a href="#"> Login here</a></p>
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <script>
-      $(".message a").click(function() {
-        $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
-      });
-    </script>
-  </body>
+  <script>
+    $(".message a").click(function () {
+      $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+    });
+  </script>
+</body>
+
 </html>
