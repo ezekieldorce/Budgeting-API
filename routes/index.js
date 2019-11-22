@@ -10,6 +10,18 @@ routes.get("/", function(req, res) {
   res.render("welcome.ejs");
 });
 
+routes.get("/contact", function(req, res) {
+  res.render("contact.ejs");
+});
+
+routes.get("/login", function(req, res) {
+  res.render("login.ejs");
+});
+
+routes.get("/transactions", function(req, res) {
+  res.render("transaction.ejs");
+});
+
 routes.get("/transactions", function(req, res) {
   db.Transaction.findAll({
     // code here
@@ -60,20 +72,6 @@ routes.post(
   passport.authenticate("local", {
     successRedirect: "/transactions",
     failureRedirect: "/login"
-  })
-);
-
-//GET Signup
-routes.get("/registration", function(req, res) {
-  res.render("registration.ejs");
-});
-
-//POST Signup
-routes.post(
-  "/user/signup",
-  passport.authenticate("local-signup", {
-    successRedirect: "/home",
-    failureRedirect: "/user/signup"
   })
 );
 
