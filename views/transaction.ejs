@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,18 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navbar.css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:500&display=swap" rel="stylesheet">
-      
+
 </head>
+
 <body>
     <header>
         <img class="logo" src="./checkology.png" alt="logo">
         <nav>
             <ul class="nav_links">
-                <li><a href="welcome.html">Welcome</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
-               
+                <li><a href="/welcome">Welcome</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/transactions/">Transactions</a></li>
+
             </ul>
         </nav>
         <a class="cta" href="welcome.html"><button>Contact</button></a>
@@ -30,13 +32,13 @@
 
     <div id="container">
 
-    <form action="/add" method="POST">
-       
-        Item name: <input type="name" name="Enter item name">
-        Input transaction Amount : <input type="text" name=" Amount " value="Amount Spent">
-        Date: <input type="Date" name="Date">
-     <input class="user-button" type="submit" value="add">
-    </form>
+        <form action="/add" method="POST">
+
+            Item name: <input type="name" name="Enter item name">
+            Input transaction Amount : <input type="text" name=" Amount " value="Amount Spent">
+            Date: <input type="Date" name="Date">
+            <input class="user-button" type="submit" value="add">
+        </form>
     </div>
 
     <div id="Balance">
@@ -44,8 +46,11 @@
         <p>Warning! End balance is closer than it appears!</p>
     </div><br>
 
-    <div class="end"><h2><strong>Previous Transactions</strong></h2><br><br><br></div>
+    <div class="end">
+        <h2><strong>Previous Transactions</strong></h2><br><br><br>
+    </div>
     <!-- loop over all transactions and show them on the screen -->
 
 </body>
+
 </html>
