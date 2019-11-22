@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         type: {
-            type: DataTypes.STRING
+            type: DataTypes.BOOLEAN
         },
 
         category: {
@@ -23,14 +23,19 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN
         },
 
-        date: {
+        data: {
             type: DataTypes.STRING
         },
 
         balance: {
             type: DataTypes.INTEGER
         },
+
         userId: {
+            type: DataTypes.INTEGER
+        },
+
+        amount: {
             type: DataTypes.INTEGER
         }
     });
