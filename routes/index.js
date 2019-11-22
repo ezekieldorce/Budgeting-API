@@ -10,8 +10,8 @@ routes.get("/", function(req, res) {
   res.render("welcome.ejs");
 });
 
-routes.get("/contact", function(req, res) {
-  res.render("contact.ejs");
+routes.get("/currency", function(req, res) {
+  res.render("../currency/index.ejs");
 });
 
 routes.get("/login", function(req, res) {
@@ -22,7 +22,7 @@ routes.get("/transactions", function(req, res) {
   res.render("transaction.ejs");
 });
 
-routes.get("/transaction", function(req, res) {
+routes.get("/transactions", function(req, res) {
   db.Transaction.findAll({
     // code here
     where: { userID: req.user.id }
@@ -72,6 +72,20 @@ routes.post(
   passport.authenticate("local", {
     successRedirect: "/transactions",
     failureRedirect: "/login"
+  })
+);
+
+//GET Signup
+routes.get("/login", function(req, res) {
+  res.render("login.ejs");
+});
+
+//POST Signup
+routes.post(
+  "/user/login",
+  passport.authenticate("local-signup", {
+    successRedirect: "/transactions",
+    failureRedirect: "/user/login"
   })
 );
 
