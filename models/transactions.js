@@ -30,7 +30,12 @@ module.exports = function(sequelize, DataTypes) {
     balance: {
       type: DataTypes.INTEGER
     },
+
     userId: {
+      type: DataTypes.INTEGER
+    },
+    
+    amount: {
       type: DataTypes.INTEGER
     }
   });
