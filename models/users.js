@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 //exporting this model to our index
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("Tasks", {
+  var User = sequelize.define("Users", {
     //define columns of our table
     email: {
       type: DataTypes.STRING,
@@ -28,6 +28,9 @@ module.exports = function (sequelize, DataTypes) {
     },
 
     phoneNumber: {
+      type: DataTypes.STRING
+    },
+    wallet: {
       type: DataTypes.STRING
     }
   });
