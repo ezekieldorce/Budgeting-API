@@ -22,7 +22,7 @@ routes.get("/transactions", function(req, res) {
   res.render("transaction.ejs");
 });
 
-routes.get("/transactions", function(req, res) {
+routes.get("/transaction", function(req, res) {
   db.Transaction.findAll({
     // code here
     where: { userID: req.user.id }
